@@ -1,0 +1,92 @@
+/* Personal artwork and glass surfaces, kept separate from the upstream theme. */
+:root {
+	--primary: #087f7b;
+	--radius-large: 1.35rem;
+	--card-bg-transparent: rgb(246 255 254 / var(--card-transparent-opacity, 0.88));
+}
+
+:root.dark {
+	--primary: #39c5bb;
+	--page-bg: #0b171c;
+	--card-bg-transparent: rgb(11 27 34 / var(--card-transparent-opacity, 0.82));
+}
+
+body {
+	font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+body.wallpaper-transparent .card-base {
+	border: 1px solid rgb(131 229 222 / 0.2);
+	box-shadow: 0 12px 40px rgb(0 18 23 / 0.12);
+	backdrop-filter: blur(18px);
+	-webkit-backdrop-filter: blur(18px);
+}
+
+body.is-home .banner-home-text-overlay > div {
+	padding: 1.75rem 2rem;
+	width: fit-content !important;
+	max-width: min(88vw, 36rem);
+	border: 1px solid rgb(205 255 250 / 0.3);
+	border-radius: 1.5rem;
+	background: rgb(5 22 28 / 0.48);
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+	box-shadow: 0 16px 64px rgb(0 0 0 / 0.14);
+}
+
+body.is-home .banner-title {
+	letter-spacing: -0.06em;
+	font-weight: 800;
+	text-shadow: 0 4px 30px rgb(0 0 0 / 0.3);
+}
+
+body.is-home .banner-subtitle {
+	letter-spacing: 0.12em;
+	line-height: 1.9;
+}
+
+body.is-home .banner-links .banner-link {
+	border: 1px solid rgb(155 237 231 / 0.4);
+	border-radius: 999px;
+	background: rgb(8 42 49 / 0.6);
+}
+
+body.is-home .banner-links .banner-link:hover {
+	background: rgb(33 139 134 / 0.8);
+}
+
+.profile-avatar-image {
+	aspect-ratio: 1;
+	object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+	body.is-home .banner-home-text-overlay {
+		justify-content: flex-start !important;
+		align-items: flex-end !important;
+		padding: 0 6vw 20vh !important;
+	}
+
+	body.is-home .banner-home-text-overlay > div {
+		text-align: left !important;
+	}
+
+	body.is-home .banner-links {
+		justify-content: flex-start;
+	}
+}
+
+@media (max-width: 767px) {
+	body.is-home .banner-home-text-overlay > div {
+		padding: 1.25rem;
+	}
+
+	body.is-home .banner-subtitle {
+		letter-spacing: 0.04em;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	.banner-title, .banner-subtitle { animation: none !important; }
+}

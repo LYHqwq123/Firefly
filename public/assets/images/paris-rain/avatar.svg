@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="paris rain">
+  <rect width="320" height="320" rx="48" fill="#0b222b"/>
+  <circle cx="160" cy="160" r="116" fill="none" stroke="#39c5bb" stroke-width="2"/>
+  <circle cx="160" cy="160" r="98" fill="none" stroke="#39c5bb" stroke-opacity=".25"/>
+  <path d="M106 64v28M214 228v28M64 214h28M228 106h28" stroke="#39c5bb" stroke-width="4"/>
+  <text x="155" y="187" fill="#bafff6" font-family="Arial,sans-serif" font-size="96" font-weight="700" text-anchor="middle" letter-spacing="-8">pr</text>
+  <circle cx="238" cy="86" r="8" fill="#ec68a5"/>
+</svg>

@@ -9,6 +9,7 @@ public/vndb-covers/
 
 # dependencies
 node_modules/
+.sites-runtime/
 
 # logs
 npm-debug.log*
