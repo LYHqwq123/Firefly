@@ -63,16 +63,20 @@ lang: "zh_CN"
 
 设为 `draft: true` 的文章在开发预览中可见，正式构建时隐藏。分类、标签和归档会根据文章内容自动生成，无需手动建页面。当前示例位于 `src/content/posts/welcome.md`，可修改或删除。
 
-## 部署到 Vercel 或 Cloudflare Pages
+## Cloudflare Pages 自动发布
 
-正式仓库为 [LYHqwq123/Firefly](https://github.com/LYHqwq123/Firefly)，正式域名为 `https://paris-rain.top`，DNS 在西部数码管理。正式域名仍需完成托管平台接入和 DNS 配置；无需发送密码、令牌或私钥。
+正式仓库为 [LYHqwq123/Firefly](https://github.com/LYHqwq123/Firefly)，已连接 Cloudflare Pages 项目 `paris-rain`。域名在西部数码注册，DNS 由 Cloudflare 免费套餐托管。
 
-1. 将本项目上传到自己的 GitHub 仓库。
-2. 在 Vercel 或 Cloudflare Pages 中导入该仓库。
-3. 设置安装命令为 `pnpm install`，构建命令为 `pnpm build`，输出目录为 `dist`；Node.js 版本需满足项目要求。
-4. 确认 `src/config/siteConfig.ts` 中的 `site_url` 为 `https://paris-rain.top`，再触发部署。
-5. 在部署平台添加自定义域名，按平台给出的记录配置 DNS。
+| 项目 | 当前设置 |
+| --- | --- |
+| 正式地址 | [paris-rain.top](https://paris-rain.top/) |
+| 平台地址 | [paris-rain.pages.dev](https://paris-rain.pages.dev/) |
+| 自动发布分支 | `master` |
+| 构建命令 / 输出目录 | `pnpm build` / `dist` |
+| 构建版本 | `NODE_VERSION=24.19.0`、`PNPM_VERSION=11.25.0`，生产与预览环境一致 |
 
-这里使用静态站点部署，不需要设置 `CF_WORKERS` 环境变量。平台预览地址与正式域名不同，正式发布前请确认 `site_url`，确保订阅、站点地图和文章链接指向自己的域名。
+发布文章时，把修改提交并推送至 `master`。Cloudflare 会自动安装依赖、构建并发布；在 Cloudflare 的「Workers 和 Pages → paris-rain → 部署」中查看结果。也可以在 GitHub 网页打开文章文件，点击编辑按钮，修改后提交到 `master`。
 
-之后每次向部署分支推送文章或修改，平台会按项目设置重新构建。
+这里使用静态站点部署，不需要设置 `CF_WORKERS` 环境变量。`src/config/siteConfig.ts` 的 `site_url` 已设为 `https://paris-rain.top`，订阅、站点地图和文章链接使用该正式域名。
+
+域名的 Cloudflare 名称服务器为 `arvind.ns.cloudflare.com`、`cass.ns.cloudflare.com`。根域 CNAME 指向 `paris-rain.pages.dev`；原有邮箱与 Minecraft 解析已保留。以后管理解析时，在 Cloudflare 修改记录。旧的西部数码解析表不会随 Cloudflare 的修改自动同步。
