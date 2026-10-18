@@ -31,12 +31,12 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		postInfo: { mode: "description" },
 		navbar: { transparentMode: "semi", blur: 14 },
 	},
-	// 全屏布局复用这些参数，初音插画留在背景，文字卡片保持可读。
-	overlay: { zIndex: -1, opacity: 1, blur: 4, cardOpacity: 0.78 },
+	// Hero 布局在首页下滑和内页都保留固定壁纸，并复用透明卡片参数。
+	overlay: { zIndex: -1, opacity: 1, blur: 4, cardOpacity: 0.72 },
 	fullscreen: {
-		layout: "classic",
+		layout: "hero",
 		position: "center",
-		navbar: { transparentMode: "semifull", blur: 14 },
+		navbar: { transparentMode: "semi", blur: 14 },
 		blurRamp: { enable: { desktop: true, mobile: true } },
 	},
 };
