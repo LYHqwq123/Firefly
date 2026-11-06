@@ -35,7 +35,7 @@ pnpm dev
 | 首页背景上的文字 | `src/config/backgroundWallpaper.ts` 的 `common.homeText` |
 | 关于页 | `src/content/spec/about.md` |
 
-当前背景文件为 `public/assets/images/paris-rain/miku-stage.jpg`，头像为 `public/assets/images/paris-rain/avatar.svg`。直接替换同名文件即可更新图片；改用其他文件名时，需同步修改上表中的配置路径。配置中的网页路径分别为 `/assets/images/paris-rain/miku-stage.jpg` 与 `/assets/images/paris-rain/avatar.svg`，不包含 `public`。手机可另准备竖图，并设置 `src.mobile`。请使用自己拥有使用权的图片。
+当前背景文件为 `public/assets/images/paris-rain/miku-stage.jpg`，个人头像为 `public/assets/images/paris-rain/github-avatar.png`（同步自 GitHub 公开头像）。直接替换同名文件即可更新图片；改用其他文件名时，需同步修改 `src/config/profileConfig.ts` 中的路径。配置中的网页路径分别为 `/assets/images/paris-rain/miku-stage.jpg` 与 `/assets/images/paris-rain/github-avatar.png`，不包含 `public`。手机可另准备竖图，并设置 `src.mobile`。请使用自己拥有使用权的图片。
 
 ## 写文章
 
